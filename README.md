@@ -11,6 +11,7 @@ SPIN ASYMMETRY ANALYSIS DOCUMENTATION
 Installation
 ------------
  0. make sure you have the relative luminosity and polarization code directories first;
+    (see the next section)
     you need the following root files:
     - counts.root -- scaler counts
     - rtree.root -- relative luminosity tree
@@ -30,15 +31,7 @@ Installation
     - symlink counts.root --> ../scalers/counts.root
     - symlink rtree.root --> ../scalers/rtree.root
     - symlink pol.root --> ../polar/pol.root
-
-
-Release
--------
-
- - to create a release directory with analysis code (i.e. no root files), run "spin_release"
- - WARNING: if your spin code directory is called "spin_release", the code will attempt to
-   delete itself.. that is why a warning is shown
-
+    - * my polar or scalers directory might be called polar13 and scalers13
 
 
 Relative Luminosity & Polarization
@@ -47,10 +40,6 @@ Relative Luminosity & Polarization
  - code and data are found in ../scalers for rellum and in ../polar for polarization
  - rellum root files are rtree.root and counts.root; polarization root file is pol.root
  - spin and "bXing kicked" status are read from ../scalers/counts.root
- - building spin release copies the root files into the spin directory; instead you 
-   can run "ln_rootfiles" in this directory to link the required root files if you
-   have ../scalers and ../polar
-
 
 
 Data set reduction

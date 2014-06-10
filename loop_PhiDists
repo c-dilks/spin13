@@ -52,7 +52,7 @@ popd > /dev/null
 cnt=1
 
 while read line; do
-  echo "Arguments = -b -q PhiDists3.C(\\\"${line}\\\")" >> $job
+  echo "Arguments = -b -q PhiDists2.C(\\\"${line}\\\")" >> $job
   echo "Log    = ${log}/Phi${cnt}.log" >> $job
   echo "Output = ${log}/Phi${cnt}.out" >> $job
   echo "Error  = ${log}/Phi${cnt}.err" >> $job

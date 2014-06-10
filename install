@@ -10,6 +10,9 @@ mkdir -pv phiset
 if [ ! -e "../../redset" ]; then mkdir -pv ../../redset; fi
 touch redset; rm redset
 ln -sv ../../redset ./
+ln -sv ../scalers13/counts.root ./
+ln -sv ../scalers13/rtree.root ./
+ln -sv ../polar13/pol.root ./
 
 # build source code
 pushd src > /dev/null
