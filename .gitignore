@@ -1,0 +1,14 @@
+*.png
+*.pdf
+*.dat
+*.root
+*.bat
+logfiles/*
+patchset/*
+pdfset/*
+phiset/*
+pi0cntset/*
+study_fill/*
+study_runs/*
+chisq
+corrupted
