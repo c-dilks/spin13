@@ -11,8 +11,8 @@ void ReduceData(const char * filename="Outputset145ka.root",
                 const char * dirname="../../Output")
 {
   // load polarization and rellum data
-  gSystem->Load("src/RunData.so");
-  RunData * RD = new RunData();
+  gSystem->Load("src/RunData13.so");
+  RunData13 * RD = new RunData13();
 
   char root_file[256];
   sprintf(root_file,"%s/%s",dirname,filename);

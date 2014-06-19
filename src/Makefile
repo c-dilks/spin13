@@ -19,17 +19,17 @@ GLIBS = $(ROOTGLIBS) $(SYSLIBS)
 
 #-----------------------------------------------
 
-CXXFILES = RunData.cxx
-HEADERS = RunData.h
+CXXFILES = RunData13.cxx
+HEADERS = RunData13.h
 
 #-----------------------------------------------
 
-All: RunData.so
+All: RunData13.so
 
-RunData.so: LinkDef.h $(HEADERS) $(CXXFILES)
+RunData13.so: LinkDef.h $(HEADERS) $(CXXFILES)
 	@echo "generating dictionary $@..."
-	@rootcint -f RunDataDict.cxx -c $(HEADERS) LinkDef.h
-	g++ $(CXXFILES) RunDataDict.cxx -shared -o RunData.so $(CXXFLAGS) $(GLIBS)
+	@rootcint -f RunData13Dict.cxx -c $(HEADERS) LinkDef.h
+	g++ $(CXXFILES) RunData13Dict.cxx -shared -o RunData13.so $(CXXFLAGS) $(GLIBS)
 
 clean:
-	@rm RunData.so
+	@rm RunData13.so

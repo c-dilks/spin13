@@ -8,8 +8,8 @@
 void PhiDists2(const char * filename="RedOutputset132ha.root")
 {
   // load polarization and rellum data
-  gSystem->Load("src/RunData.so");
-  RunData * RD = new RunData();
+  gSystem->Load("src/RunData13.so");
+  RunData13 * RD = new RunData13();
 
   // get bins from environment
   Int_t phi_bins0, eta_bins0, pt_bins0, en_bins0;

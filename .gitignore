@@ -2,6 +2,7 @@
 *.dat
 *.root
 *.bat
+*.swp
 logfiles/*
 patchset/*
 pdfset/*
@@ -11,3 +12,5 @@ study_fill/*
 study_runs/*
 chisq
 corrupted
+src/*.so
+src/*Dict*

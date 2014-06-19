@@ -4,8 +4,8 @@
 
 void Diagnostics(const char jtype="pi0")
 {
-  gSystem->Load("src/RunData.so");
-  RunData * RD = new RunData();
+  gSystem->Load("src/RunData13.so");
+  RunData13 * RD = new RunData13();
   const Int_t NBINS=50; // NUMBER OF BINS
 
   // open chain
