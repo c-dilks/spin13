@@ -25,27 +25,27 @@ void DrawThree(const char * jtype="pi0", const char * filetype="png", const char
   char plotname[asym_bins][128];
   char plottitle[256];
   char xaxistitle[64];
-  if(pt_bins0==1 && en_bins0!=1 && eta_bins0==1) 
+  if(pt_bins0==1 && en_bins0!=1) 
   {
-    strcpy(plotname[1],"/A_L_yellow/en_dep_a1_g0_p0");
-    strcpy(plotname[2],"/A_L_blue/en_dep_a2_g0_p0");
-    strcpy(plotname[3],"/A_LL/en_dep_a3_g0_p0");
+    strcpy(plotname[1],"/A_L_yellow/en_dep_a1_p0");
+    strcpy(plotname[2],"/A_L_blue/en_dep_a2_p0");
+    strcpy(plotname[3],"/A_LL/en_dep_a3_p0");
     strcpy(plottitle,"Helicity Asymmetries vs. E_{#gamma#gamma}");
     strcpy(xaxistitle,"E_{#gamma#gamma} (GeV)");
   }
-  else if(pt_bins0!=1 && en_bins0==1 && eta_bins0==1) 
+  else if(pt_bins0!=1 && en_bins0==1) 
   {
-    strcpy(plotname[1],"/A_L_yellow/pt_dep_a1_g0_e0");
-    strcpy(plotname[2],"/A_L_blue/pt_dep_a2_g0_e0");
-    strcpy(plotname[3],"/A_LL/pt_dep_a3_g0_e0");
+    strcpy(plotname[1],"/A_L_yellow/pt_dep_a1_e0");
+    strcpy(plotname[2],"/A_L_blue/pt_dep_a2_e0");
+    strcpy(plotname[3],"/A_LL/pt_dep_a3_e0");
     strcpy(plottitle,"Helicity Asymmetries vs. p_{#perp}");
     strcpy(xaxistitle,"P_{#perp}  (GeV/c)");
   }
-  else if(pt_bins0==1 && en_bins0==1 && eta_bins0==1)
+  else if(pt_bins0==1 && en_bins0==1)
   {
-    strcpy(plotname[1],"/A_L_yellow/pt_dep_a1_g0_e0");
-    strcpy(plotname[2],"/A_L_blue/pt_dep_a2_g0_e0");
-    strcpy(plotname[3],"/A_LL/pt_dep_a3_g0_e0");
+    strcpy(plotname[1],"/A_L_yellow/pt_dep_a1_e0");
+    strcpy(plotname[2],"/A_L_blue/pt_dep_a2_e0");
+    strcpy(plotname[3],"/A_LL/pt_dep_a3_e0");
     strcpy(plottitle,"Helicity Asymmetries -- single bin");
     strcpy(xaxistitle,"single bin");
   }
