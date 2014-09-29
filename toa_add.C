@@ -416,7 +416,7 @@ void toa_add()
         {
           for(Int_t o=0; o<combined_en_wdist_array[j][g][p]->GetEntries(); o++)
           {
-            bc = ((TH1D*)(combined_en_wdist_array[j][g][e]->At(o)))->GetBinContent(b);
+            bc = ((TH1D*)(combined_en_wdist_array[j][g][p]->At(o)))->GetBinContent(b);
             bc_old = en_wdist_tot[j][g][p]->GetBinContent(b);
             en_wdist_tot[j][g][p]->SetBinContent(b,bc+bc_old);
           };
@@ -481,7 +481,7 @@ void toa_add()
       {
         for(Int_t o=0; o<combined_pt_wdist_array[j][g][e]->GetEntries(); o++)
         {
-          cc->SetLogy();
+          //cc->SetLogy();
           ((TH1D*)(combined_pt_wdist_array[j][g][e]->At(o)))->Draw();
           if(o==0) cc->Print(pt_wdist_pdfl[j][g][e],"pdf");
           else if(o+1==combined_pt_wdist_array[j][g][e]->GetEntries()) cc->Print(pt_wdist_pdfr[j][g][e],"pdf");
@@ -493,7 +493,7 @@ void toa_add()
       {
         for(Int_t o=0; o<combined_en_wdist_array[j][g][p]->GetEntries(); o++)
         {
-          cc->SetLogy();
+          //cc->SetLogy();
           ((TH1D*)(combined_en_wdist_array[j][g][p]->At(o)))->Draw();
           if(o==0) cc->Print(en_wdist_pdfl[j][g][p],"pdf");
           else if(o+1==combined_en_wdist_array[j][g][p]->GetEntries()) cc->Print(en_wdist_pdfr[j][g][p],"pdf");
