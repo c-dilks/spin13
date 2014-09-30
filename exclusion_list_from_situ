@@ -1,155 +1,133 @@
 pt_wdist_pi0_g0_e0.pdf
-14123025	high peaks at 2 and 3 with 15000 and 40000 events
-14124003	similar to above with shorter peaks
-14141015	high peaks near 2
-14141016	high peaks near 2
-14141018	high peaks near 2
-14141019	high peaks near 2
-14141020	high peaks near 2
-14141022	high peaks near 2
-14141023	high peaks near 2
-14141025	high peaks near 2
-14141045	peaks off to left side, small depth disappear
-14141046	low entries
-14143081	low entries
-14146069	low entries
-14151042	strangely higher peak near 0
+14123025	hot towers
+14124003	hot towers
+14141015	hot towers
+14141016	hot towers
+14141018	hot towers
+14141019	hot towers
+14141020	hot towers
+14141022	hot towers
+14141023	hot towers
+14141025	hot towers
+14141045	anamolous pt distribution
+14151042	anamolous pt & en distributions
 =========================================================================
 pt_wdist_sph_g0_e0.pdf
-14122061	high peak near 4 and 9.5
-14123025	small peak around 2
-14123077	single peak around 5
-14124001	small peak around 4.7, 5.3 and 5.8
-14124036	small peak near 1
-14129026	huge peak near 1
-14130033	small peak around 1.5 and 2
-14136010	strange peak around 1.5 and 2
-14136012	similar to above
-14137012	not smooth curve
-14138052	moderate peak near 2
-14138061	moderate peak near 1.7
-14139015	very high peak near 3 and another shorter peak around 3.8
-14139016	very high peak near 3 and another shorter peak around 3.8
-14139017	very high peak near 3 and another shorter peak around 3.8 
-14139018	very high peak near 3 and another shorter peak around 3.8
-14139019	very high peak near 3 and another shorter peak around 3.8
-14139021	very high peak near 3 and another shorter peak around 3.8
-14139022	very high peak near 3 and another shorter peak around 3.8
-14139023	very high peak near 3 and another shorter peak around 3.8
-14139068	high peak about 1.4
-14139069	high peak about 1.4
-14139071	high peak about 1.4
-14140002	high peak about 1.4
-14140014	two standout small peak
-14140024	two standout small peak
-14140028	two standout small peak
-14140029	two standout small peak
-14140030	two standout small peak
-14141023	high peak at 4 and shorter peak at 8
-14141025	seemingly lower slope
-14141045	seemingly higher slope
-14143081	very high peak at 1
-14143091	very high peak at 1
-14143092	very high peak at 1
-14145022	very high peak at 1
-14145023	very high peak at 1
-14145028	very high peak at 1
-14145036	very high peak at 1
-14145038	very high peak at 1
-14145039	very high peak at 1
-14147005	high peaks around 2.5 and 3.2
-14147009	very high peak at 4 and a small hill from 8 to 10
-14148066	very high peak at 1
-14148067	very high peak at 1
-14150130	very high peak at 1
-14151042	two moderate peak from 1.5 to 2
+14122061	hot towers
+14123025	hot towers
+14123077	hot towers
+14124001	hot towers
+14124007  hot towers
+14124036	hot towers
+14129026	hot towers
+14130033	hot towers
+13130034  hot towers
+13132023  hot towers
+14136010	hot towers
+14136012	hot towers
+14137021  hot towers (broad peaks) 
+14138041  hot towers (really broad peaks)
+14138044  hot towers (really broad peaks)
+14138052	hot towers
+14138061	hot towers
+14139015	hot towers
+14139016	hot towers
+14139017	hot towers
+14139018	hot towers
+14139019	hot towers
+14139021	hot towers
+14139022	hot towers
+14139023	hot towers
+14139058  hot towers (broad peaks)
+14139068	hot towers
+14139069	hot towers
+14139071	hot towers
+14140002	hot towers
+14140014	hot towers
+14140024	hot towers
+14140028	hot towers
+14140029	hot towers
+14140030	hot towers
+14141015  hot towers & anamolous pt dist
+14141016  anamolous pt dist
+14141018  anamolous pt dist
+14141019  anamolous pt dist
+14141020  anamolous pt dist
+14141022  anamolous pt dist
+14141023	hot towers
+14141025  anamolous pt dist
+14141045	anamolous pt dist
+14141046	anamolous pt dist
+14143081	hot towers
+14143091	hot towers
+14143092	hot towers
+14145022	hot towers
+14145023	hot towers
+14145028	hot towers
+14145036	hot towers
+14145038	hot towers
+14145039	hot towers
+14147005	hot towers
+14147007	hot towers
+14147008	hot towers
+14147009	hot towers
+14147011	hot towers
+14147012	hot towers
+14147014	hot towers
+14148066	hot towers
+14148067	hot towers
+14150130	hot towers
+14151042	hot towers
+14152020  hot towers
 ======================================================================
 pt_wdist_thr_g0_e0.pdf
-14123076	strange high peak at 4
-14124006	very high peak at 5
-14124036	very high peak at 5
-14130033	small peak at 3.2 and high peak at 5
-14130034	small peak at 3.2 and high peak at 5
-14132023	small peak at 3.2 and high peak at 5
-14132046	very high peak at 4.5
-14132061	multiple high peak from 4.5 to 6
-14136010	small peak at 3.2 and high peak at 5
-14136012	small peak at 3.2 and high peak at 5
-14138060	high peak at 5
-14138062	low entries
-14139015	two major hills instead of one 
-14139016	two major hills instead of one
-14139017	two major hills instead of one
-14139018	two major hills instead of one
-14139019	low entries
-14139058	small peak at 3.2 and high peak at 5
-14140014	small peak at 3.2 and high peak at 5
-14140021	low entries
-14140024	small peak at 3.2 and high peak at 5
-14140025	small peak at 3.2 and high peak at 5
-14140028	small peak at 3.2 and high peak at 5
-14140029	small peak at 3.2 and high peak at 5
-14140030	small peak at 3.2 and high peak at 5
-14140043	small peak at 3.2 and high peak at 5
-14140053	low entries
-14141015	multiple high peaks
-14141016	multiple high peaks
-14141018	multiple high peaks
-14141019	multiple high peaks
-14141020	multiple high peaks
-14141022	multiple high peaks
-14141023	multiple high peaks
-14141025	multiple high peaks
-14141045	low entries, unusual peak location
-14141046	low entries, small peak at 3.2 and high peak at 5
-14142004	low entries
-14143081	high peak at 3.6
-14143091	high peak at 3.6
-14143092	high peak at 3.6
-14144028	low entries
-14145022	high peak near 3.6
-14145023	high peak near 3.6
-14145024	small peak at 3.4
-14145025	small peak at 3.4
-14145028	high peak near 3.6
-14145036	high peak near 3.6
-14145038	high peak near 3.6
-14145039	high peak near 3.6
-14145080	huge peak at 7.6
-14145082	low entries
-14145090	low entries
-14146019	low entries
-14146020	low entries
-14146021	low entries
-14146055	high peak near 3.6
-14146066	low entries
-14146068	low entries
-14146069	low entries
-14147012	low entries
-14147065	low entries
-14147076	low entries
-14147077	low entries
-14148058	low entries
-14148066	high peak near 3.6
-14148067	high peak near 3.6
-14148082	low entries
-14149027	low entries
-14150130	high peak near 3.6
-14151042	peak at 1 is high
-14151098	low entries
-14151106	low entries
-14152019	low entries
-14152023	low entries
-14152060	low entries
-14152067	low entries
-14154018	low entries
-14155011	low entries
-14155049	low entries
-14155060	low entries
-14155095	low entries
-14155099	low entries
-14156016	low entries
-
-
-
-
+14122058  hot towers (only in en dist) 
+14123076	hot towers
+14124006	hot towers
+14124036	hot towers
+14130033	hot towers
+14130034	hot towers
+14132023	hot towers
+14132046	hot towers
+14132061	hot towers
+14136010	hot towers
+14136012	hot towers
+14138060	hot towers
+14139015	double peak
+14139016	double peak
+14139017	double peak
+14139018	double peak
+14139058	hot towers
+14140014	hot towers
+14140024	hot towers
+14140025	hot towers
+14140028	hot towers
+14140029	hot towers
+14140030	hot towers
+14140043	hot towers
+14141015	hot towers
+14141016	hot towers
+14141018	hot towers
+14141019	hot towers
+14141020	hot towers
+14141022	hot towers
+14141023	hot towers
+14141025	hot towers
+14141045	anamolous dists
+14141046	anamolous dists
+14142004	hot towers
+14143081	hot towers
+14143091	hot towers
+14143092	hot towers
+14145022	hot towers
+14145023	hot towers
+14145028	hot towers
+14145036	hot towers
+14145038	hot towers
+14145039	hot towers
+14145080	hot towers
+14146055	hot towers
+14148066	hot towers
+14148067	hot towers
+14150130	hot towers
+14151042	double peak
