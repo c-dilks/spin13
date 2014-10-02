@@ -51,6 +51,9 @@ Data set reduction
  - The data set that will be reduced is ../../Output
  - "loop_ReduceData" creates a condor batch file to run "ReduceData.C" on
    all root files in ../../Output
+   --> NOTE: FOR RUN 12, THIS SCRIPT IMPLEMENTS A SHIFT FORWARD OF 1 BXING
+       YOU MUST LOOK AT OUTPUT OF BxingDistPi0.C TO VERIFY THIS SHIFT IS CORRECT
+       FOR THE RUNS BEING CONSIDERED
  - after reduction, run "Diagnostics.C" to look at dependences of kinematics on
    geometry; produces "diag.pdf" with various 2d histograms
  - you can also check for corruption by using GetRedsetEntries.C; if the tree
@@ -62,6 +65,7 @@ Data set reduction
 
 Asymmetry Analysis 
 ------------------
+0. Make diagnostic plots `diag.root` by running `Diagnostics.C`; this may take a while
 
 1. Create "env_bins.sh" by running "Bin_Splitter.C" and then source environment variables 
    with "source env_bins.sh"
@@ -78,6 +82,9 @@ Asymmetry Analysis
    - phi distributions for each run are written to the output file in object arrays, 
      which are named as phi_s[spinbit]_g[eta bin]_p[pt bin]_e[en bin]
      - the histograms in the object arrays have the run number appended to their names
+   - `PhiDists3.C` implements an energy-dependent mass cut
+     - first, using `diag.root`, run `MassCutter.C` and look at the mass cuts; the 
+       cuts will be written out to `mass_cuts`, which is then read by `PhiDists3.C`
    - you need to supply `PhiDists3.C` with exclusion lists, which are lists of runs
      for each jet type (sph,pi0,thr); these runs were excluded AFTER `toa_add.C` was
      executed (see next step) to produce "wdist" pdfs, which are pt and energy distributions
