@@ -308,6 +308,10 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
 
     // check for valid array indices (filters out events outside kinematic boundaries)
     //printf("%d %d %d %d %d\n",ss,gg,pp,ee,rr);
+    // pattern = 14,23,32,41 -- OOOOSSSS
+    // pattern = 13,24,31,42 -- SSSSOOOO
+    //if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0 && (pattern==14 || pattern==23 || pattern==32 || pattern==41))
+    //if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0 && (pattern==13 || pattern==24 || pattern==31 || pattern==42))
     if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0)
     {
       // rellum consistency & polarization cut
