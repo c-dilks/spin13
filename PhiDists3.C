@@ -65,7 +65,7 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
 
 
   // read redset tree and set output file name
-  Int_t runnum,bx,blue,yell,TrigBits,pattern;
+  Int_t runnum,bx,blue,yell,TrigBits,pattern,ClIndex;
   Float_t M12,N12,E12,Z,Phi,Eta,Pt,b_pol,y_pol;
   Bool_t kicked,isConsistent;
   char setname[32];
@@ -78,6 +78,7 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
   tree->SetBranchAddress("runnum",&runnum);
   tree->SetBranchAddress("Bunchid7bit",&bx);
   tree->SetBranchAddress("TrigBits",&TrigBits);
+  tree->SetBranchAddress("ClIndex",&ClIndex);
   tree->SetBranchAddress("M12",&M12);
   tree->SetBranchAddress("N12",&N12);
   tree->SetBranchAddress("E12",&E12);
@@ -151,9 +152,11 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
   TH1D * pt_wdist[3][eta_bins][en_bins][NRUNS]; // [jet type] [....]
   TH1D * en_wdist[3][eta_bins][pt_bins][NRUNS];
   TH1D * mm_wdist[3][eta_bins][pt_bins][en_bins][NRUNS];
+  TH1D * gg_wdist[3][eta_bins][pt_bins][en_bins][NRUNS];
   char pt_wdist_n[3][eta_bins][en_bins][NRUNS][64];
   char en_wdist_n[3][eta_bins][pt_bins][NRUNS][64];
   char mm_wdist_n[3][eta_bins][pt_bins][en_bins][NRUNS][64];
+  char gg_wdist_n[3][eta_bins][pt_bins][en_bins][NRUNS][64];
   for(Int_t r=0; r<NRUNS; r++)
   {
     for(Int_t g=0; g<eta_bins; g++)
@@ -181,8 +184,14 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
           sprintf(mm_wdist_n[0][g][p][e][r],"mm_wdist_sph_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
           sprintf(mm_wdist_n[1][g][p][e][r],"mm_wdist_pi0_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
           sprintf(mm_wdist_n[2][g][p][e][r],"mm_wdist_thr_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
+          sprintf(gg_wdist_n[0][g][p][e][r],"gg_wdist_sph_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
+          sprintf(gg_wdist_n[1][g][p][e][r],"gg_wdist_pi0_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
+          sprintf(gg_wdist_n[2][g][p][e][r],"gg_wdist_thr_g%d_p%d_e%d_r%d",g,p,e,runnum_arr[r]);
           for(Int_t j=0; j<3; j++)
+          {
             mm_wdist[j][g][p][e][r] = new TH1D(mm_wdist_n[j][g][p][e][r],mm_wdist_n[j][g][p][e][r],NWBINS,0,1);
+            gg_wdist[j][g][p][e][r] = new TH1D(gg_wdist_n[j][g][p][e][r],gg_wdist_n[j][g][p][e][r],NWBINS,2.5,4.2);
+          };
         };
       };
     };
@@ -308,10 +317,6 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
 
     // check for valid array indices (filters out events outside kinematic boundaries)
     //printf("%d %d %d %d %d\n",ss,gg,pp,ee,rr);
-    // pattern = 14,23,32,41 -- OOOOSSSS
-    // pattern = 13,24,31,42 -- SSSSOOOO
-    //if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0 && (pattern==14 || pattern==23 || pattern==32 || pattern==41))
-    //if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0 && (pattern==13 || pattern==24 || pattern==31 || pattern==42))
     if(ss>=0 && gg>=0 && pp>=0 && ee>=0 && rr>=0)
     {
       // rellum consistency & polarization cut
@@ -324,11 +329,13 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
           pt_wdist[0][gg][ee][rr]->Fill(Pt);
           en_wdist[0][gg][pp][rr]->Fill(E12);
           mm_wdist[0][gg][pp][ee][rr]->Fill(M12);
+          gg_wdist[0][gg][pp][ee][rr]->Fill(Eta);
         }
 
         // pi0 cut (includes hard kinematic cutoffs, which differ for runs 12 & 13)
         else if(  exclude_pi0==0 &&
                   (TrigBits&0x200) && 
+                  ClIndex==0 &&
                   fabs(N12-2)<0.01 &&
                   Z<0.8 &&
                   ( (((runnum/1000000)-1 == 12) && Pt>=2.5 && Pt<10) ||
@@ -339,6 +346,7 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
           // fill mass wdist regardless if event passes mass cut; this is to look at full
           // mass distributions for each run, which is useful for hunting for hot towers
           mm_wdist[1][gg][pp][ee][rr]->Fill(M12); 
+          gg_wdist[1][gg][pp][ee][rr]->Fill(Eta); 
 
           // energy-dependent mass cut
           usepi0=false;
@@ -363,6 +371,7 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
           pt_wdist[2][gg][ee][rr]->Fill(Pt);
           en_wdist[2][gg][pp][rr]->Fill(E12);
           mm_wdist[2][gg][pp][ee][rr]->Fill(M12);
+          gg_wdist[2][gg][pp][ee][rr]->Fill(Eta);
         };
       };
     };
@@ -377,12 +386,14 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
   TObjArray * pt_wdist_arr[3][eta_bins][en_bins];
   TObjArray * en_wdist_arr[3][eta_bins][pt_bins];
   TObjArray * mm_wdist_arr[3][eta_bins][pt_bins][en_bins];
+  TObjArray * gg_wdist_arr[3][eta_bins][pt_bins][en_bins];
   char phi_dist_sph_arr_name[4][eta_bins][pt_bins][en_bins][128];
   char phi_dist_pi0_arr_name[4][eta_bins][pt_bins][en_bins][128];
   char phi_dist_thr_arr_name[4][eta_bins][pt_bins][en_bins][128];
   char pt_wdist_arr_name[3][eta_bins][en_bins][128];
   char en_wdist_arr_name[3][eta_bins][pt_bins][128];
   char mm_wdist_arr_name[3][eta_bins][pt_bins][en_bins][128];
+  char gg_wdist_arr_name[3][eta_bins][pt_bins][en_bins][128];
   for(Int_t e=0; e<en_bins; e++)
   {
     for(Int_t g=0; g<eta_bins; g++)
@@ -431,11 +442,25 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
     {
       for(Int_t e=0; e<en_bins; e++)
       {
-        for(Int_t j=0; j<3; j++) mm_wdist_arr[j][g][p][e] = new TObjArray();
+        for(Int_t j=0; j<3; j++) 
+        {
+          mm_wdist_arr[j][g][p][e] = new TObjArray();
+          gg_wdist_arr[j][g][p][e] = new TObjArray();
+        };
         sprintf(mm_wdist_arr_name[0][g][p][e],"mm_wdist_sph_g%d_p%d_e%d",g,p,e);
         sprintf(mm_wdist_arr_name[1][g][p][e],"mm_wdist_pi0_g%d_p%d_e%d",g,p,e);
         sprintf(mm_wdist_arr_name[2][g][p][e],"mm_wdist_thr_g%d_p%d_e%d",g,p,e);
-        for(Int_t j=0; j<3; j++) for(Int_t r=0; r<NRUNS; r++) mm_wdist_arr[j][g][p][e]->AddLast(mm_wdist[j][g][p][e][r]);
+        sprintf(gg_wdist_arr_name[0][g][p][e],"gg_wdist_sph_g%d_p%d_e%d",g,p,e);
+        sprintf(gg_wdist_arr_name[1][g][p][e],"gg_wdist_pi0_g%d_p%d_e%d",g,p,e);
+        sprintf(gg_wdist_arr_name[2][g][p][e],"gg_wdist_thr_g%d_p%d_e%d",g,p,e);
+        for(Int_t j=0; j<3; j++) 
+        {
+          for(Int_t r=0; r<NRUNS; r++) 
+          {
+            mm_wdist_arr[j][g][p][e]->AddLast(mm_wdist[j][g][p][e][r]);
+            gg_wdist_arr[j][g][p][e]->AddLast(gg_wdist[j][g][p][e][r]);
+          };
+        };
       };
     };
   };
@@ -500,6 +525,8 @@ void PhiDists3(const char * filename="RedOutputset132ha.root")
       for(Int_t p=0; p<pt_bins; p++) en_wdist_arr[j][g][p]->Write(en_wdist_arr_name[j][g][p],TObject::kSingleKey);
       for(Int_t p=0; p<pt_bins; p++) for(Int_t e=0; e<en_bins; e++)
         mm_wdist_arr[j][g][p][e]->Write(mm_wdist_arr_name[j][g][p][e],TObject::kSingleKey);
+      for(Int_t p=0; p<pt_bins; p++) for(Int_t e=0; e<en_bins; e++)
+        gg_wdist_arr[j][g][p][e]->Write(gg_wdist_arr_name[j][g][p][e],TObject::kSingleKey);
     };
   };
 };
